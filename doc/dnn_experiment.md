@@ -32,7 +32,7 @@ result=classifier.evaluate(test_input_fn)
 ### 函数原型的约定
 为了能够使用Estimator，各个函数都需要满足一定的要求。input_fn指定的函数必须能够返回可迭代的对象，每个item是一个feature、label对。tensorflow.estimator.inputs.numpy_input_fn能够将给定的数据作增殖、排序等操作然后传递给模型。
 
-为了Estimator类的train、predict和evaluete使得，model函数必须返回EstimatorSpec函数。
+为了顺利使用Estimator类的train、predict和evaluete，model函数必须返回EstimatorSpec函数。
 
 可以在model通过判断mode的值来判断模型处于哪种状态，train对应的是tensorflow.estimator.ModeKeys.TRAIN、predict对应的是tensorflow.estimator.ModeKeys.PREIDICT以及evaluate对应的是tensorflow.estimator.ModeKeys.EVAL。
 

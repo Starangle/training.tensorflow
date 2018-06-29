@@ -30,6 +30,8 @@ tensorflow提供了一些高阶的api来构建网络，tf.layers中有一些可�
 1. tf.layers.dense可以用来表示全连接层。
 
 从下面的实例可以看到这些函数的用法
-1. dnn_experiment  
-    [代码](code/dnn_experiment.py)  
-    [说明](doc/dnn_experiment.md)
+1. dnn_experiment:以dnn为模型，学习Estimator的用法  
+[代码](code/dnn_experiment.py)  [说明](doc/dnn_experiment.md)
+
+2. test_input:学习input_fn的取值规则  
+[代码](code/test_input.py)  [说明](doc/test_input.md)
