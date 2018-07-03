@@ -20,7 +20,7 @@ def model(features,labels,mode):
         return tf.estimator.EstimatorSpec(mode,loss=loss,eval_metric_ops={"accuracy":accuracy})
     
     if mode==tf.estimator.ModeKeys.TRAIN:
-        train_op=tf.train.GradientDescentOptimizer(learning_rate=0.1).minimize(loss,tf.train.get_global_step())
+        train_op=tf.train.AdamOptimizer(learning_rate=0.1).minimize(loss,tf.train.get_global_step())
         return tf.estimator.EstimatorSpec(mode,loss=loss,train_op=train_op)
     
 def parse(file_path):
@@ -40,7 +40,7 @@ def main():
         batch_size=120,
         num_epochs=None,
         shuffle=True)
-    classifier.train(input_fn=train_input_fn,steps=5000)
+    classifier.train(input_fn=train_input_fn,steps=1000)
 
     test_input_fn=tf.estimator.inputs.numpy_input_fn(
         x=test_x,
